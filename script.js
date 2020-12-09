@@ -4,10 +4,37 @@
 // inputs.forEach(input => {
 //   console.log(input);
 // })
-var character = 'billy';
-var age = 21;
-var isMale = true;
-var circ = function (diameter) {
-    return diameter * Math.PI;
+// let character = 'billy';
+// let age = 21;
+// let isMale = true;
+// const circ = (diameter:number) => {
+//   return diameter * Math.PI
+// }
+// console.log(circ(7));
+// part 4
+var names = ['luigi', 'mario', 'yoshi'];
+names.push('toad');
+// names.push(1);
+var numbers = [10, 20, 30, 40];
+numbers.push(25);
+// numbers.push(false);
+// numbers[0] = 'test';
+var mixed = ['ken', 4, 'test', 8, 9];
+mixed.push('test');
+mixed.push(10);
+//objects
+var pirate = {
+    name: 'luffy',
+    color: 'white',
+    age: 21
 };
-console.log(circ(7));
+pirate.age = 22;
+pirate.name = 'luffy2';
+// pirate.age = '30';
+// ninja.skills = ['punch', 'kick'];
+pirate = {
+    name: 'zoro',
+    color: 'black',
+    age: 23
+};
+// part 5 explicit types

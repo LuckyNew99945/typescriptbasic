@@ -8,12 +8,53 @@
 //   console.log(input);
 // })
 
-let character = 'billy';
-let age = 21;
-let isMale = true;
+// let character = 'billy';
+// let age = 21;
+// let isMale = true;
 
-const circ = (diameter:number) => {
-  return diameter * Math.PI
+// const circ = (diameter:number) => {
+//   return diameter * Math.PI
+// }
+
+// console.log(circ(7));
+
+// part 4
+
+let names = ['luigi', 'mario', 'yoshi'];
+
+names.push('toad');
+// names.push(1);
+
+let numbers = [10,20,30,40];
+
+numbers.push(25);
+// numbers.push(false);
+// numbers[0] = 'test';
+
+let mixed = ['ken', 4,'test', 8, 9];
+
+mixed.push('test');
+mixed.push(10);
+
+//objects
+
+let pirate = {
+  name : 'luffy',
+  color: 'white',
+  age: 21
 }
 
-console.log(circ(7));
+pirate.age = 22;
+pirate.name = 'luffy2';
+// pirate.age = '30';
+// ninja.skills = ['punch', 'kick'];
+
+pirate = {
+  name: 'zoro',
+  color: 'black',
+  age: 23,
+  // skills : ['slash', 'cut']
+}
+
+// part 5 explicit types
+
