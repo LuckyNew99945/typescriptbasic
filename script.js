@@ -19,9 +19,9 @@ var numbers = [10, 20, 30, 40];
 numbers.push(25);
 // numbers.push(false);
 // numbers[0] = 'test';
-var mixed = ['ken', 4, 'test', 8, 9];
-mixed.push('test');
-mixed.push(10);
+// let mixed = ['ken', 4,'test', 8, 9];
+// mixed.push('test');
+// mixed.push(10);
 //objects
 var pirate = {
     name: 'luffy',
@@ -38,3 +38,26 @@ pirate = {
     age: 23
 };
 // part 5 explicit types
+var nama;
+var umur;
+var isFemale;
+//arrays
+var pirates = [];
+pirates = ['luffy', 'zoro'];
+pirates.push('sanji');
+//union types
+var mixed = [];
+mixed.push('hello');
+mixed.push(20);
+mixed.push(23);
+mixed.push(false);
+console.log(mixed);
+var uid;
+uid = '123';
+uid = 123;
+//objects
+var pirateOne;
+pirateOne = { name: 'sanji', age: 23 };
+pirateOne = [1, 2];
+var pirateTwo;
+pirateTwo = { name: 'usop', age: 25 };

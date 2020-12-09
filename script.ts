@@ -31,10 +31,10 @@ numbers.push(25);
 // numbers.push(false);
 // numbers[0] = 'test';
 
-let mixed = ['ken', 4,'test', 8, 9];
+// let mixed = ['ken', 4,'test', 8, 9];
 
-mixed.push('test');
-mixed.push(10);
+// mixed.push('test');
+// mixed.push(10);
 
 //objects
 
@@ -57,4 +57,42 @@ pirate = {
 }
 
 // part 5 explicit types
+
+let nama:string;
+let umur:number;
+let isFemale:boolean;
+
+//arrays
+
+let pirates:string[] = [];
+
+pirates = ['luffy', 'zoro'];
+
+pirates.push('sanji');
+
+//union types
+
+let mixed:(string|number|boolean)[] = [];
+mixed.push('hello');
+mixed.push(20);
+mixed.push(23);
+mixed.push(false);
+console.log(mixed);
+
+let uid:string|number;
+uid = '123';
+uid = 123;
+
+//objects
+
+let pirateOne:object;
+pirateOne = {name: 'sanji', age:23};
+pirateOne = [1,2];
+let pirateTwo:{
+  name:string,
+  age:number,
+};
+
+pirateTwo = {name: 'usop', age:25};
+
 
