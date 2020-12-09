@@ -95,4 +95,32 @@ let pirateTwo:{
 
 pirateTwo = {name: 'usop', age:25};
 
+//part 6 dnyamic(any) types (think twice before use it)
+
+let test:any = 25;
+test = 'test';
+
+let mixed2:any[] = [];
+
+mixed2.push(6);
+mixed2.push('test');
+mixed2.push(true);
+
+let pirateThree:{name:any,age:any};
+
+pirateThree = {
+  name: 'nami',
+  age: 20,
+}
+
+console.log(pirateThree);
+
+pirateThree = {
+  name: 20,
+  age: 'nami'
+}
+
+console.log(pirateThree);
+
+
 

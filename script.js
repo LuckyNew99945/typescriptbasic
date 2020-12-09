@@ -61,3 +61,21 @@ pirateOne = { name: 'sanji', age: 23 };
 pirateOne = [1, 2];
 var pirateTwo;
 pirateTwo = { name: 'usop', age: 25 };
+//part 6 dnyamic(any) types (think twice before use it)
+var test = 25;
+test = 'test';
+var mixed2 = [];
+mixed2.push(6);
+mixed2.push('test');
+mixed2.push(true);
+var pirateThree;
+pirateThree = {
+    name: 'nami',
+    age: 20
+};
+console.log(pirateThree);
+pirateThree = {
+    name: 20,
+    age: 'nami'
+};
+console.log(pirateThree);
