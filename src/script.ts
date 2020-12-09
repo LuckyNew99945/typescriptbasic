@@ -128,43 +128,74 @@
 
 //part 8 function basics
 
-let greet:Function;
+// let greet:Function;
 
-greet = (name:string) => {
-  console.log(`Hello ${name}`);
-}
+// greet = (name:string) => {
+//   console.log(`Hello ${name}`);
+// }
 
-greet('billy');
+// greet('billy');
 
-const add = (a:number,b:number,c?:number|string) => {
-  console.log(a+b);
-  console.log(c);
-} //data type function is void (undefined in js)
+// const add = (a:number,b:number,c?:number|string) => {
+//   console.log(a+b);
+//   console.log(c);
+// } //data type function is void (undefined in js)
 
-//c is OPTIONAL parameter not MUST so we can call function without third parameter (default value is undefined)
+// //c is OPTIONAL parameter not MUST so we can call function without third parameter (default value is undefined)
 
-add(5,10,'20');
+// add(5,10,'20');
 
-const times = (a:number,b:number,c:number|string = 10) => {
-  console.log(a * b);
-  console.log(c);
-  return a * b;
-}
+// const times = (a:number,b:number,c:number|string = 10) => {
+//   console.log(a * b);
+//   console.log(c);
+//   return a * b;
+// }
 
-times(5,10);
+// times(5,10);
 
-let hasil = times(10,20);
-//hasil = 'test' cant do that because hasil already assign as number
+// let hasil = times(10,20);
+// //hasil = 'test' cant do that because hasil already assign as number
 
-const minus = (a:number,b:number,c?:number|string): number => {
-  console.log(a * b);
-  console.log(c);
-  return a * b;
-} //make sure function return the data type as number 
+// const minus = (a:number,b:number,c?:number|string): number => {
+//   console.log(a * b);
+//   console.log(c);
+//   return a * b;
+// } //make sure function return the data type as number 
 
-minus(20,30);
+// minus(20,30);
 
 
 
 //c is OPTIONAL parameter not MUST so we can call function without third parameter and the default is 10 if we not assign it.
+
+// part 9 type aliases 
+
+type StringOrNum = string | number;
+type objWN = {name:string,uid:StringOrNum};
+const plus = (uid:StringOrNum,b:number) => {
+  console.log(uid,b);
+}
+
+plus(10,20);
+
+const minus = (a:number,b:number,c?:StringOrNum):number => {
+  return a-b;
+}
+
+minus(20,10);
+
+const sapa = (user: {name:string, uid:StringOrNum}) => {
+  console.log(`${user.name} says hello `);
+}
+
+sapa({name:'billy', uid:20});
+
+const sapalagi = (user: objWN) => {
+  console.log(`${user.name} says hello again`);
+}
+
+sapalagi({name:'test', uid:"20"});
+
+
+
 
