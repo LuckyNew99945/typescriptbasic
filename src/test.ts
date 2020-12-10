@@ -238,39 +238,67 @@
 
 
 //after generic added + extends it with types can do but the type now is not strict to object type alone
-const addUI = <T extends object>(obj:T) => {
-  let uid = Math.floor(Math.random() * 100);
-  return {...obj,uid};
-}
+// const addUI = <T extends object>(obj:T) => {
+//   let uid = Math.floor(Math.random() * 100);
+//   return {...obj,uid};
+// }
 
-let docOne = addUI({name:'billy', age:'21', skills: 'one'});
-// let docTwo = addUI('hello'); can't do this anymore must object type
+// let docOne = addUI({name:'billy', age:'21', skills: 'one'});
+// // let docTwo = addUI('hello'); can't do this anymore must object type
 
-console.log(docOne);
+// console.log(docOne);
 
-//or <T extends {name:string}> for spesific object types with property name
+// //or <T extends {name:string}> for spesific object types with property name
 
-// /w interfaces
+// // /w interfaces
+
+// interface Resource<T> {
+//   uid: number,
+//   resourceName: string,
+//   data : T
+// }
+
+// const docThree: Resource<object> = {
+//   uid: 1,
+//   resourceName: 'person',
+//   data: {name: 'test'}
+// }
+
+// const docFour: Resource<string> = {
+//   uid:2,
+//   resourceName: 'shop',
+//   data: 'bag'
+// };
+
+// console.log(docThree,docFour);
+
+//part 19 enums
+
+enum ResourceType { BOOK, AUTHOR, FILM, DIRECTOR, PERSON};
+
+//enum is index so book index is 0
 
 interface Resource<T> {
-  uid: number,
-  resourceName: string,
-  data : T
+  uid:number;
+  resourceType:ResourceType;
+  data: T;
 }
 
-const docThree: Resource<object> = {
-  uid: 1,
-  resourceName: 'person',
-  data: {name: 'test'}
-}
-
-const docFour: Resource<string> = {
-  uid:2,
-  resourceName: 'shop',
-  data: 'bag'
+const docOne: Resource<object> = {
+  uid:1,
+  resourceType: ResourceType.BOOK,
+  data: {title: 'test'}
 };
 
-console.log(docThree,docFour);
+const docTwo: Resource<object> = {
+  uid:2,
+  resourceType: ResourceType.PERSON,
+  data: {name: 'billy'}
+};
+
+console.log(docOne,docTwo);
+
+
 
 
 

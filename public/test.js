@@ -169,21 +169,49 @@
 // let docOne = addUI({name:'billy', age:'21', skills: 'one'});
 // let docTwo = addUI('hello'); can do this without error
 //after generic added + extends it with types can do but the type now is not strict to object type alone
-const addUI = (obj) => {
-    let uid = Math.floor(Math.random() * 100);
-    return Object.assign(Object.assign({}, obj), { uid });
-};
-let docOne = addUI({ name: 'billy', age: '21', skills: 'one' });
-// let docTwo = addUI('hello'); can't do this anymore must object type
-console.log(docOne);
-const docThree = {
+// const addUI = <T extends object>(obj:T) => {
+//   let uid = Math.floor(Math.random() * 100);
+//   return {...obj,uid};
+// }
+// let docOne = addUI({name:'billy', age:'21', skills: 'one'});
+// // let docTwo = addUI('hello'); can't do this anymore must object type
+// console.log(docOne);
+// //or <T extends {name:string}> for spesific object types with property name
+// // /w interfaces
+// interface Resource<T> {
+//   uid: number,
+//   resourceName: string,
+//   data : T
+// }
+// const docThree: Resource<object> = {
+//   uid: 1,
+//   resourceName: 'person',
+//   data: {name: 'test'}
+// }
+// const docFour: Resource<string> = {
+//   uid:2,
+//   resourceName: 'shop',
+//   data: 'bag'
+// };
+// console.log(docThree,docFour);
+//part 19 enums
+var ResourceType;
+(function (ResourceType) {
+    ResourceType[ResourceType["BOOK"] = 0] = "BOOK";
+    ResourceType[ResourceType["AUTHOR"] = 1] = "AUTHOR";
+    ResourceType[ResourceType["FILM"] = 2] = "FILM";
+    ResourceType[ResourceType["DIRECTOR"] = 3] = "DIRECTOR";
+    ResourceType[ResourceType["PERSON"] = 4] = "PERSON";
+})(ResourceType || (ResourceType = {}));
+;
+const docOne = {
     uid: 1,
-    resourceName: 'person',
-    data: { name: 'test' }
+    resourceType: ResourceType.BOOK,
+    data: { title: 'test' }
 };
-const docFour = {
+const docTwo = {
     uid: 2,
-    resourceName: 'shop',
-    data: 'bag'
+    resourceType: ResourceType.PERSON,
+    data: { name: 'billy' }
 };
-console.log(docThree, docFour);
+console.log(docOne, docTwo);
