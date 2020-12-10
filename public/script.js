@@ -1,5 +1,6 @@
 //classes
 import { Invoice } from './classes/Invoice.js';
+import { ListTemplate } from './classes/ListTemplate.js';
 import { Payment } from './classes/Payment.js';
 //interfaces in classes 
 // let docOne: HasFormatter;
@@ -49,6 +50,9 @@ const type = document.querySelector('#type');
 const tofrom = document.querySelector('#tofrom');
 const details = document.querySelector('#details');
 const amount = document.querySelector('#amount');
+//list template instance
+const ul = document.querySelector('ul');
+const list = new ListTemplate(ul);
 form.onsubmit = (e) => {
     e.preventDefault();
     let doc;
@@ -58,5 +62,5 @@ form.onsubmit = (e) => {
     else {
         doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
     }
-    console.log(doc);
+    list.render(doc, type.value, 'end');
 };
