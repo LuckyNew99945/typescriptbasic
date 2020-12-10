@@ -170,31 +170,62 @@
 
 // part 9 type aliases 
 
-type StringOrNum = string | number;
-type objWN = {name:string,uid:StringOrNum};
-const plus = (uid:StringOrNum,b:number) => {
-  console.log(uid,b);
-}
+// type StringOrNum = string | number;
+// type objWN = {name:string,uid:StringOrNum};
+// const plus = (uid:StringOrNum,b:number) => {
+//   console.log(uid,b);
+// }
 
-plus(10,20);
+// plus(10,20);
 
-const minus = (a:number,b:number,c?:StringOrNum):number => {
-  return a-b;
-}
+// const minus = (a:number,b:number,c?:StringOrNum):number => {
+//   return a-b;
+// }
 
-minus(20,10);
+// minus(20,10);
 
-const sapa = (user: {name:string, uid:StringOrNum}) => {
-  console.log(`${user.name} says hello `);
-}
+// const sapa = (user: {name:string, uid:StringOrNum}) => {
+//   console.log(`${user.name} says hello `);
+// }
 
-sapa({name:'billy', uid:20});
+// sapa({name:'billy', uid:20});
 
-const sapalagi = (user: objWN) => {
-  console.log(`${user.name} says hello again`);
-}
+// const sapalagi = (user: objWN) => {
+//   console.log(`${user.name} says hello again`);
+// }
 
-sapalagi({name:'test', uid:"20"});
+// sapalagi({name:'test', uid:"20"});
+
+// part 10 function signature
+
+
+// ex 1
+
+// let greet: (a:string,b:string) => void;
+
+// greet = (name:string, greeting:string) => {
+//   console.log(`${name} says ${greeting}`);
+// }
+
+// //ex 2
+// let calc: (a:number,b:number,c:string) => number;
+
+// calc = (numOne:number,numTwo:number,action:string) => {
+//   if(action === 'add') {
+//     return numOne + numTwo;
+//   } else {
+//     return numOne - numTwo;
+//   }
+// }
+
+// //ex 3
+// let logDetails: (obj: {name:string, age:number}) => void;
+
+// type person = {name:string,age:number};
+
+// logDetails = (pirate: person) => {
+//   console.log(`${pirate.name} is ${pirate.age} years old`);
+// }
 
 
 
