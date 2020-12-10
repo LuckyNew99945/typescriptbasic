@@ -215,6 +215,64 @@
 //   console.log(`${pirate.name} is ${pirate.age} years old`);
 // }
 
+// part 18 generic
+
+// before u cant access property addUI in docone
+// const addUI = (obj:Object) => {
+//   let uid = Math.floor(Math.random() * 100);
+//   return {...obj,uid};
+// }
+
+// let docOne = addUI({name:'billy', age:'21', skills: 'one'});
+
+// console.log(docOne);
+
+//after generic added can do but the type now is not strict to object type alone
+// const addUI = <T>(obj:T) => {
+//   let uid = Math.floor(Math.random() * 100);
+//   return {...obj,uid};
+// }
+
+// let docOne = addUI({name:'billy', age:'21', skills: 'one'});
+// let docTwo = addUI('hello'); can do this without error
+
+
+//after generic added + extends it with types can do but the type now is not strict to object type alone
+const addUI = <T extends object>(obj:T) => {
+  let uid = Math.floor(Math.random() * 100);
+  return {...obj,uid};
+}
+
+let docOne = addUI({name:'billy', age:'21', skills: 'one'});
+// let docTwo = addUI('hello'); can't do this anymore must object type
+
+console.log(docOne);
+
+//or <T extends {name:string}> for spesific object types with property name
+
+// /w interfaces
+
+interface Resource<T> {
+  uid: number,
+  resourceName: string,
+  data : T
+}
+
+const docThree: Resource<object> = {
+  uid: 1,
+  resourceName: 'person',
+  data: {name: 'test'}
+}
+
+const docFour: Resource<string> = {
+  uid:2,
+  resourceName: 'shop',
+  data: 'bag'
+};
+
+console.log(docThree,docFour);
+
+
 
 
 
