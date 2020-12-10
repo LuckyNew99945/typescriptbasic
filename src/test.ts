@@ -277,6 +277,8 @@
 enum ResourceType { BOOK, AUTHOR, FILM, DIRECTOR, PERSON};
 
 //enum is index so book index is 0
+//enum is special type for typescript
+//enum is container of set of const and associate it to numeric value
 
 interface Resource<T> {
   uid:number;

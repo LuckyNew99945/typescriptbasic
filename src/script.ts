@@ -93,17 +93,31 @@ const list = new ListTemplate(ul);
 form.onsubmit = (e:Event) => {
   e.preventDefault();
 
+  let values:[string,string,number] = [tofrom.value,details.value,amount.valueAsNumber];
+
   let doc:HasFormatter;
 
   if(type.value === 'invoice') {
-    doc = new Invoice(tofrom.value,details.value,amount.valueAsNumber);
+    doc = new Invoice(...values);
   } else {
-    doc = new Payment(tofrom.value,details.value,amount.valueAsNumber);
+    doc = new Payment(...values);
   }
 
   list.render(doc, type.value, 'end');
 
 
-  
-
 }
+
+  //part 20 tuples
+
+  //type for ts like array one major diffrent and one type data can't change or shift and its fixed when first initialized
+
+  let arr = ['ryu',20,true];
+  arr[0] = false;
+  arr[1] = 'yoshi';
+  arr = [30,false,'tesy'];
+
+  let tup:[string,number,boolean] = ['test',20,false];
+
+  let student: [string,number];
+  student = ['test',22];

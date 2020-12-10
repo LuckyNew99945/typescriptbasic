@@ -55,12 +55,22 @@ const ul = document.querySelector('ul');
 const list = new ListTemplate(ul);
 form.onsubmit = (e) => {
     e.preventDefault();
+    let values = [tofrom.value, details.value, amount.valueAsNumber];
     let doc;
     if (type.value === 'invoice') {
-        doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+        doc = new Invoice(...values);
     }
     else {
-        doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+        doc = new Payment(...values);
     }
     list.render(doc, type.value, 'end');
 };
+//part 20 tuples
+//type for ts like array one major diffrent and one type data can't change or shift and its fixed when first initialized
+let arr = ['ryu', 20, true];
+arr[0] = false;
+arr[1] = 'yoshi';
+arr = [30, false, 'tesy'];
+let tup = ['test', 20, false];
+let student;
+student = ['test', 22];
