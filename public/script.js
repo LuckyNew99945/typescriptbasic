@@ -1,4 +1,22 @@
 "use strict";
+//classes
+var Invoice = /** @class */ (function () {
+    function Invoice(c, d, a) {
+        this.client = c;
+        this.details = d;
+        this.amount = a;
+    }
+    Invoice.prototype.format = function () {
+        return this.client + " owes $" + this.amount + " for " + this.details;
+    };
+    return Invoice;
+}());
+var invOne = new Invoice('mario', 'work on the mario website', 400);
+var invTwo = new Invoice('luigi', 'work on luigi website', 350);
+var invoices = [];
+invoices.push(invOne);
+invoices.push(invTwo);
+console.log(invoices);
 var form = document.querySelector('.new-item-form');
 // console.log(form.children);
 //inputs
