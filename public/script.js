@@ -1,11 +1,20 @@
 "use strict";
 //classes
 var Invoice = /** @class */ (function () {
-    function Invoice(c, d, a) {
-        this.client = c;
-        this.details = d;
-        this.amount = a;
+    // readonly client: string;
+    // private details: string;
+    // public amount: number;
+    function Invoice(client, details, amount) {
+        this.client = client;
+        this.details = details;
+        this.amount = amount;
     }
+    //OR
+    // constructor(a:string,b:string,c:number) {
+    //   this.client = a;
+    //   this.amount = b;
+    //   this.details = c;
+    // } + access modifier above
     Invoice.prototype.format = function () {
         return this.client + " owes $" + this.amount + " for " + this.details;
     };
@@ -16,7 +25,10 @@ var invTwo = new Invoice('luigi', 'work on luigi website', 350);
 var invoices = [];
 invoices.push(invOne);
 invoices.push(invTwo);
-console.log(invoices);
+// console.log(invoices);
+invoices.forEach(function (inv) {
+    console.log(inv.client, inv.amount, inv.format());
+});
 var form = document.querySelector('.new-item-form');
 // console.log(form.children);
 //inputs
